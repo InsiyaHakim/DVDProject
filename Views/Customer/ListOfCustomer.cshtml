@@ -1,0 +1,15 @@
+﻿@model List<DVDProject.Models.Customer>
+@{
+	ViewBag.Title = "ListOfCustomer";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-striped">
+	@foreach (var customer in Model)
+	{
+		<tr>
+			<td>@Html.ActionLink(customer.FirstName + customer.LastName, "EditCustomer", new { id = customer.ID})</td>
+			<td>@customer.Email</td>
+		</tr>
+	}
+<table class="table table-striped">
